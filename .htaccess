@@ -1,0 +1,139 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.html [L]
+</IfModule>
+
+RewriteCond %{HTTP_HOST} !^www.genesiswebdevelopers.com$ [NC]
+RewriteRule ^(.*)$ https://www.genesiswebdevelopers.com/$1 [L,R=301]
+
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?genesiswebdevelopers\.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,NC]
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|OPTIONS) 
+RewriteRule .* - [F]
+
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^(HEAD|PUT|DELETE) 
+RewriteRule .* - [F]
+
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection: "1; mode=block"
+</IfModule>
+
+ErrorDocument 404 /error.html
+
+# ------------------------------------------------------------
+# ✅ Enable Gzip Compression
+# ------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# ------------------------------------------------------------
+# ✅ Enable Browser Caching
+# ------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images (1 year)
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+
+  # Fonts (1 year)
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # CSS & JS (1 month)
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+
+  # HTML (1 hour)
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# ------------------------------------------------------------
+# ✅ Automatically Serve Minified CSS/JS if Available
+# ------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Serve .min.css if exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}\.min.css -f
+  RewriteRule ^(.+)\.css$ $1.min.css [L]
+
+  # Serve .min.js if exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}\.min.js -f
+  RewriteRule ^(.+)\.js$ $1.min.js [L]
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+  BrotliCompressionQuality 5
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+<IfModule mod_headers.c>
+  Header set Connection keep-alive
+</IfModule>
+
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2|woff|ttf|otf)$">
+    Header add Link "</fonts/myfont.woff2>; rel=preload; as=font; type=font/woff2; crossorigin"
+  </FilesMatch>
+</IfModule>
+
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpe?g|png|gif|webp|svg)$">
+    Header add "Content-Disposition" "inline"
+    Header add "Loading" "lazy"
+  </FilesMatch>
+</IfModule>
+
