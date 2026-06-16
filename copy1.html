@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Website Development | Genesis Web Developers</title>
+
+<meta name="description" content="Professional Website Development Services by Genesis Web Developers">
+<meta name="keywords" content="Website Development, Web Design, SEO, Web Application, Genesis Web Developers">
+<meta name="author" content="Genesis Web Developers">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+<logo class="png:"> 
+  
+"logo": "https://genesiswebdevelopers.com/images/genesis-web-developers-in-tamilnadu-favicon.png" type="image/png">
+
+</logo>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b1120;
+color:#fff;
+overflow-x:hidden;
+line-height:1.7;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 0;
+background:rgba(11,17,32,0.95);
+backdrop-filter:blur(10px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:55px;
+}
+
+.logo h2{
+font-size:22px;
+font-weight:700;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+font-size:15px;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#3b82f6;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+padding-top:100px;
+}
+
+.hero-content{
+max-width:750px;
+}
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+line-height:1.2;
+margin-bottom:25px;
+}
+
+.hero h1 span{
+color:#3b82f6;
+}
+
+.hero p{
+font-size:18px;
+color:#d1d5db;
+margin-bottom:35px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:16px 38px;
+background:#2563eb;
+border-radius:50px;
+font-weight:600;
+transition:0.4s;
+}
+
+.hero-btn:hover{
+background:#1d4ed8;
+transform:translateY(-5px);
+}
+
+/* SECTION */
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:45px;
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#cbd5e1;
+}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:60px;
+align-items:center;
+}
+
+.about-img img{
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.about-content h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.about-content p{
+color:#cbd5e1;
+margin-bottom:18px;
+}
+
+/* SERVICES */
+
+.services{
+background:#111827;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:#1e293b;
+padding:35px;
+border-radius:22px;
+transition:0.4s;
+border:1px solid transparent;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#3b82f6;
+}
+
+.service-card img{
+width:70px;
+margin-bottom:25px;
+}
+
+.service-card h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.service-card p{
+color:#cbd5e1;
+font-size:15px;
+}
+
+/* PROCESS */
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.process-card{
+background:#111827;
+padding:40px 30px;
+border-radius:25px;
+text-align:center;
+position:relative;
+}
+
+.process-number{
+width:75px;
+height:75px;
+background:#2563eb;
+margin:auto;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:700;
+margin-bottom:25px;
+}
+
+.process-card h3{
+margin-bottom:15px;
+font-size:24px;
+}
+
+.process-card p{
+color:#cbd5e1;
+}
+
+/* CTA */
+
+.cta{
+background:
+linear-gradient(rgba(37,99,235,0.9),rgba(37,99,235,0.9)),
+url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+text-align:center;
+padding:120px 20px;
+}
+
+.cta h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:700px;
+margin:auto;
+margin-bottom:35px;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+padding:80px 0 25px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-bottom:50px;
+}
+
+.footer-logo{
+width:160px;
+margin-bottom:20px;
+}
+
+.footer-box p{
+color:#cbd5e1;
+font-size:15px;
+margin-bottom:10px;
+}
+
+.footer-box h3{
+margin-bottom:20px;
+font-size:22px;
+}
+
+.footer-box a{
+display:block;
+margin-bottom:10px;
+color:#cbd5e1;
+transition:0.3s;
+}
+
+.footer-box a:hover{
+color:#3b82f6;
+}
+
+.copy{
+border-top:1px solid rgba(255,255,255,0.08);
+padding-top:20px;
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+color:#fff;
+z-index:999;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.section-title h2,
+.about-content h2,
+.cta h2{
+font-size:34px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+  <img src="https://genesiswebdevelopers.com/images/genesis-web-developers-in-tamilnadu-favicon.png" alt="Genesis Logo" type="image/png">   
+
+
+<h2>Genesis</h2>
+
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content" data-aos="fade-up">
+
+<h1>
+Professional <span>Website Development</span> Solutions
+</h1>
+
+<p>
+Genesis Web Developers creates responsive, fast, secure, and modern websites
+for businesses, startups, brands, and enterprises with premium UI/UX experience.
+</p>
+
+<a href="contact.html" class="hero-btn">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-img" data-aos="fade-right">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Website Development">
+
+</div>
+
+<div class="about-content" data-aos="fade-left">
+
+<h2>Build Powerful Digital Experiences</h2>
+
+<p>
+At Genesis Web Developers, we provide custom website solutions designed to grow your business online.
+Our websites are visually attractive, SEO optimized, mobile responsive, and performance focused.
+</p>
+
+<p>
+We specialize in business websites, portfolio websites, eCommerce stores,
+landing pages, web applications, and scalable enterprise solutions.
+</p>
+
+<p>
+Our expert developers ensure every project delivers speed, security,
+modern design, and user-friendly experience.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<div class="container">
+
+<div class="section-title" data-aos="fade-up">
+
+<h2>Our Web Development Services</h2>
+
+<p>
+Premium solutions tailored for your business growth
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card" data-aos="zoom-in">
+
+<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+
+<h3>Responsive Design</h3>
+
+<p>
+Modern responsive layouts optimized for desktop, tablet, and mobile devices.
+</p>
+
+</div>
+
+<div class="service-card" data-aos="zoom-in">
+
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
+
+<h3>Frontend Development</h3>
+
+<p>
+Interactive and engaging user interfaces using modern frontend technologies.
+</p>
+
+</div>
+
+<div class="service-card" data-aos="zoom-in">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
+
+<h3>Backend Development</h3>
+
+<p>
+Secure backend architecture with optimized database and server management.
+</p>
+
+</div>
+
+<div class="service-card" data-aos="zoom-in">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+
+<h3>eCommerce Websites</h3>
+
+<p>
+Complete online store solutions with payment integration and admin dashboard.
+</p>
+
+</div>
+
+<div class="service-card" data-aos="zoom-in">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4149/4149647.png">
+
+<h3>SEO Optimization</h3>
+
+<p>
+Improve Google rankings with optimized website speed and SEO structure.
+</p>
+
+</div>
+
+<div class="service-card" data-aos="zoom-in">
+
+<img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+
+<h3>Maintenance Support</h3>
+
+<p>
+Regular updates, technical support, security monitoring, and performance maintenance.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title" data-aos="fade-up">
+
+<h2>Our Development Process</h2>
+
+<p>
+Simple workflow for high-quality results
+</p>
+
+</div>
+
+<div class="process-grid">
+
+<div class="process-card" data-aos="fade-up">
+
+<div class="process-number">01</div>
+
+<h3>Planning</h3>
+
+<p>
+Understanding your business goals and preparing strategy for success.
+</p>
+
+</div>
+
+<div class="process-card" data-aos="fade-up">
+
+<div class="process-number">02</div>
+
+<h3>Design</h3>
+
+<p>
+Creating attractive UI/UX wireframes and modern website layouts.
+</p>
+
+</div>
+
+<div class="process-card" data-aos="fade-up">
+
+<div class="process-number">03</div>
+
+<h3>Development</h3>
+
+<p>
+Developing scalable and optimized websites using modern technologies.
+</p>
+
+</div>
+
+<div class="process-card" data-aos="fade-up">
+
+<div class="process-number">04</div>
+
+<h3>Launch</h3>
+
+<p>
+Testing, deployment, optimization, and post-launch technical support.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container" data-aos="zoom-in">
+
+<h2>
+Let's Build Your Dream Website
+</h2>
+
+<p>
+Partner with Genesis Web Developers to create powerful digital experiences
+that attract customers and grow your business online.
+</p>
+
+<a href="contact.html" class="hero-btn">
+Contact Us
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-box">
+
+<img src="assets/images/logo.png" class="footer-logo" alt="Genesis Logo">
+
+<p>
+Genesis Web Developers provides modern website development,
+digital marketing, branding, SEO, and hosting services.
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact Information</h3>
+
+<p>📞 +91 81222 23575</p>
+<p>📞 +91 63802 31088</p>
+<p>📧 contact@genesiswebdevelopers.com</p>
+<p>📍 Wireless Road, Airport, Trichy, Tamil Nadu - 620007</p>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+© 2026 Genesis Web Developers. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/918122223575" class="whatsapp-float">
+💬
+</a>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+</script>
+
+</body>
+
+</html>
